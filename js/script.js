@@ -19,7 +19,7 @@ window.onload = function(){
 	pageChange(true, 0);
 	e = document.getElementById('total');
 	e.innerText = pagesCount;
-}
+};
 
 function keyDown(eve){
 	switch(eve.keyCode){
