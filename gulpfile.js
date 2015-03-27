@@ -9,11 +9,12 @@ var gulp = require('gulp'),
 
 // path string
 var paths = {
+	'mdDir': 'markdown/*.md',
 	'htmlDir': 'html/**',
 	'jsDir': 'js/*.js',
 	'cssDir': 'style/*.css',
 	'imageDir': 'image/**',
-	'destDir': 'build/',
+	'destDir': 'build/'
 };
 
 // browser sync
@@ -65,5 +66,12 @@ gulp.task('build', function() {
 gulp.task('test', function() {
 	runSequence('copy', 'jslint', 'concatjs', 'watch', 'browserSync');
 });
+
+gulp.task('md', function () {
+	return gulp.src(paths.mdDir)
+		.pipe($.markdown())
+		.pipe(gulp.dest(paths.destDir));
+});
+
 
 gulp.task('default', ['test']);

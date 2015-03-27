@@ -2,6 +2,10 @@
   "name": "slidecript",
   "version": "0.0.1",
   "description": "presentation script",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doxas/slidecript.git"
+  },
   "main": "build/index.html",
   "dependencies": {},
   "devDependencies": {
