@@ -1,0 +1,2 @@
+# slidecript
+presentation script
