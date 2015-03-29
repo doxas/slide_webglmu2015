@@ -21,10 +21,14 @@ var paths = {
 var app = require('app');
 gulp.task('app', function(){
 	var fs = require('fs');
-	var source = fs.readFileSync('html/header.html');
-	source += app.parse(fs.readFileSync('markdown/index.md'));
-	source = fs.readFileSync('html/footer.html');
-	fs.writeFileSync(paths.destDir + 'index.html', source);
+	var path = require('path');
+	path.exists('build', function(exists){
+		if(!exists){fs.mkdirSync('build', 0777);}
+	})
+	var source = fs.readFileSync('html/header.html', 'utf-8');
+	source += app.parse(fs.readFileSync('markdown/document.md', 'utf-8'));
+	source += fs.readFileSync('html/footer.html', 'utf-8');
+	fs.writeFile(paths.destDir + 'index.html', source);
 });
 
 // browser sync
