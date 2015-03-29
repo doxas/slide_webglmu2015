@@ -17,6 +17,16 @@ var paths = {
 	'destDir': 'build/'
 };
 
+// module of me
+var app = require('app');
+gulp.task('app', function(){
+	var fs = require('fs');
+	var source = fs.readFileSync('html/header.html');
+	source += app.parse(fs.readFileSync('markdown/index.md'));
+	source = fs.readFileSync('html/footer.html');
+	fs.writeFileSync(paths.destDir + 'index.html', source);
+});
+
 // browser sync
 gulp.task('browserSync', function() {
 	browserSync({
@@ -48,30 +58,22 @@ gulp.task('concatjs', function() {
 
 // other task
 gulp.task('copy', function() {
-	gulp.src(paths.htmlDir).pipe(gulp.dest(paths.destDir));
 	gulp.src(paths.cssDir).pipe(gulp.dest(paths.destDir));
 	return browserSync.reload();
 });
 
 gulp.task('watch', function() {
-	gulp.watch([paths.htmlDir], ['copy']);
+	gulp.watch([paths.mdDir], ['app']);
 	gulp.watch([paths.cssDir], ['copy']);
 	gulp.watch([paths.jsDir]), ['concatjs'];
 });
 
 gulp.task('build', function() {
-	runSequence('jslint', 'buildjs', 'watch', 'browserSync');
+	runSequence('app', 'jslint', 'buildjs', 'watch', 'browserSync');
 });
 
 gulp.task('test', function() {
-	runSequence('copy', 'jslint', 'concatjs', 'watch', 'browserSync');
+	runSequence('app', 'copy', 'jslint', 'concatjs', 'watch', 'browserSync');
 });
-
-gulp.task('md', function () {
-	return gulp.src(paths.mdDir)
-		.pipe($.markdown())
-		.pipe(gulp.dest(paths.destDir));
-});
-
 
 gulp.task('default', ['test']);
