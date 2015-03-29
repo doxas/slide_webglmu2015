@@ -6,7 +6,7 @@ window.onload = function(){
 	var a, e;
 	a = document.getElementById('content').childNodes;
 	for(var i = 0, len = a.length; i < len; i++){
-		if(a[i].nodeName !== '#text'){
+		if(a[i].nodeName !== '#text' && a[i].nodeName !== '#comment'){
 			pages.push(a[i]);
 		}
 	}
