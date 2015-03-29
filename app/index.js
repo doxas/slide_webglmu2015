@@ -36,7 +36,7 @@ module.exports = {
 					k = k[0].replace(/\[|\]/g, '');
 					l = source[i].match(/\(.+\)/);
 					l = l[0].replace(/\(|\)/g, '');
-					tag = 'img src="' + l + '" alt="' + k + '"';
+					tag = 'img src="image/' + l + '" alt="' + k + '"';
 					dest[i] = '\t<p><' + tag + '></p>\n';
 					break;
 				// list

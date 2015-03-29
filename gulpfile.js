@@ -25,6 +25,9 @@ gulp.task('app', function(){
 	path.exists('build', function(exists){
 		if(!exists){fs.mkdirSync('build', 0777);}
 	})
+	path.exists('build/image', function(exists){
+		if(!exists){fs.mkdirSync('build/image', 0777);}
+	})
 	var source = fs.readFileSync('html/header.html', 'utf-8');
 	source += app.parse(fs.readFileSync('markdown/document.md', 'utf-8'));
 	source += fs.readFileSync('html/footer.html', 'utf-8');
@@ -63,6 +66,7 @@ gulp.task('concatjs', function() {
 // other task
 gulp.task('copy', function() {
 	gulp.src(paths.cssDir).pipe(gulp.dest(paths.destDir));
+	gulp.src(paths.imageDir).pipe(gulp.dest(paths.destDir + '/image'));
 	return browserSync.reload();
 });
 
