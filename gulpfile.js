@@ -18,7 +18,7 @@ var paths = {
 };
 
 // module of me
-var app = require('app');
+var app = require('./app/index.js');
 gulp.task('app', function(){
 	var fs = require('fs');
 	var path = require('path');
