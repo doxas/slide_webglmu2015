@@ -14,7 +14,7 @@ paragraph
 
 ---
 
-paragraph
+paragraph`code`paragraph
 
 paragraph
 
@@ -31,5 +31,25 @@ paragraph
 paragraph
 
 paragraph
+
+---
+
+paragraph`code`paragraph
+
+paragrapth
+
+```
+codeblock
+	codeblock
+
+	codeblock
+	codeblock
+```
+
+---
+
+paragraph
+
+--blockquote--
 
 
