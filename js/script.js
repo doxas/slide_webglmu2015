@@ -18,7 +18,7 @@ window.onload = function(){
 	e.addEventListener('click', function(){pageChange(false);}, true);
 	pageChange(true, 0);
 	e = document.getElementById('total');
-	e.innerText = pagesCount;
+	e.textContent = pagesCount;
 };
 
 function keyDown(eve){
