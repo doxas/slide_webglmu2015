@@ -62,5 +62,5 @@ function pageChange(prev, num){
 	e = document.getElementById('progress');
 	e.style.width = parseInt((activePage + 1) / pagesCount * 100) + '%';
 	e = document.getElementById('count');
-	e.innerText = activePage + 1;
+	e.textContent = activePage + 1;
 }
