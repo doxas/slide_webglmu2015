@@ -16,12 +16,12 @@ html, body {
 }
 
 a {
-	color: royalblue;
+	color: darkgreen;
 	text-decoration: underline;
 }
 
 a:hover {
-	color: crimson;
+	color: greenyellow;
 	text-decoration: underline;
 }
 
@@ -75,7 +75,7 @@ em {
 }
 
 strong {
-	background-color: crimson;
+	background-color: darkgreen;
 	border-radius: 5px;
 	color: white;
 	font-style: normal;
@@ -194,8 +194,8 @@ label:hover {
 
 #header:before {
 	content: " ";
-	background-color: gray;
-	border: 10px solid #333;
+	background-color: greenyellow;
+	border: 10px solid darkgreen;
 	width: 120px;
 	height: 120px;
 	display: inline-block;
@@ -208,8 +208,8 @@ label:hover {
 
 #header:after {
 	content: " ";
-	background-color: gray;
-	border: 10px solid #333;
+	background-color: greenyellow;
+	border: 10px solid darkgreen;
 	width: 120px;
 	height: 120px;
 	display: inline-block;
@@ -266,7 +266,7 @@ label:hover {
 }
 
 #bar {
-	background-color: silver;
+	background-color: greenyellow;
 	width: 100%;
 	height: 10px;
 	position: fixed;
@@ -275,7 +275,7 @@ label:hover {
 }
 
 #progress {
-	background-color: royalblue;
+	background-color: darkgreen;
 	width: 0%;
 	height: 10px;
 	transition: width 0.5s ease;
